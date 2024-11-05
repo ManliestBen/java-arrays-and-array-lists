@@ -73,5 +73,29 @@ public class Main {
 
         // check number of elements
 //        System.out.println(betterFavFoods.size());
+
+        ArrayList<String> carList = new ArrayList<>();
+        // instead of adding one by one, use this
+        carList.addAll(Arrays.asList("Honda Civic", "Audi Q5", "Toyota Rav 4", "Hyundai Elantra", "Acura NSX"));
+//        System.out.println(carList);
+
+//        for (int i = 0; i < carList.size(); i++) {
+//            System.out.println("index " + i + " is " + carList.get(i));
+//        }
+
+        // enhanced for loop (cleaner, but no access to index directly)
+//        for (String car : carList) {
+//            System.out.println(car);
+//        }
+
+        int[] someNums = {3, 5, 6, 8};
+        System.out.println(someNums.length);
+
+        ArrayList<String> thingsInNYC = new ArrayList<>();
+        thingsInNYC.addAll(Arrays.asList("pigeon", "pizza rat", "regular rat"));
+
+        for (String wildlife : thingsInNYC) {
+            System.out.println("Look at that crazy " + wildlife + " on the streets of NYC.");
+        }
     }
 }
