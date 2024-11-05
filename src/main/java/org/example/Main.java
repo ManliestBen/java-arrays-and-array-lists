@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
@@ -29,10 +30,48 @@ public class Main {
         // use error handling if checking for an element that may not exist
         int indexOf4 = Arrays.binarySearch(primeNums, 4);
 
-        if (indexOf4 >=0) {
-            System.out.println("Looking for 4, found value " + primeNums[indexOf4] + " at index " + indexOf4);
-        } else {
-            System.out.println("No element matched the search criteria.");
-        }
+//        if (indexOf4 >=0) {
+//            System.out.println("Looking for 4, found value " + primeNums[indexOf4] + " at index " + indexOf4);
+//        } else {
+//            System.out.println("No element matched the search criteria.");
+//        }
+
+        // adding elements to arrays
+        String[] favFoods = {"tacos", "waffles", "cheese"};
+        // this will cause a problem, as array lengths are fixed
+//        favFoods[3] = "Kool Aid";
+
+        // one way to handle it is by making a new array
+        String[] moreFavFoods = new String[4];
+        System.arraycopy(favFoods, 0, moreFavFoods, 0, 3);
+        moreFavFoods[3] = "Kool Aid";
+//        System.out.println(Arrays.toString(moreFavFoods));
+
+        // collections are a better way to handle that issue
+        ArrayList<String> betterFavFoods = new ArrayList<>();
+        // add an element
+        betterFavFoods.add("tacos");
+        betterFavFoods.add("waffles");
+        betterFavFoods.add("cheese");
+//        System.out.println(betterFavFoods);
+
+        // add using index
+        betterFavFoods.add(2, "ice cream");
+//        System.out.println(betterFavFoods);
+
+        // replace at an index
+        betterFavFoods.set(0, "carnitas");
+//        System.out.println(betterFavFoods);
+
+        // search for element
+        int indexOfCheese = betterFavFoods.indexOf("cheese");
+//        if (indexOfCheese >= 0) {
+//            System.out.println(betterFavFoods.get(indexOfCheese));
+//        } else {
+//            System.out.println("cheese not found");
+//        }
+
+        // check number of elements
+//        System.out.println(betterFavFoods.size());
     }
 }
